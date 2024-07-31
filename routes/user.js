@@ -28,8 +28,8 @@ const router = express.Router();
  *           description: The password of the user
  *       example:
  *         id: 1
- *         name: John Doe
- *         email: john.doe@example.com
+ *         name: Rose Prince
+ *         email: rose@example.com
  *         password: password123
  */
 

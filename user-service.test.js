@@ -10,7 +10,7 @@ describe('User Service', function() {
     it('should create a new user', function(done) {
         chai.request(server)
             .post('/users')
-            .send({ id: '1', name: 'John Doe' })
+            .send({ id: '1', name: 'Rose Prince' })
             .end((err, res) => {
                 expect(res).to.have.status(201);
                 expect(res.body).to.have.property('id').eql('1');
@@ -21,7 +21,7 @@ describe('User Service', function() {
     it('should not create a user with the same ID', function(done) {
         chai.request(server)
             .post('/users')
-            .send({ id: '1', name: 'Jane Doe' })
+            .send({ id: '1', name: 'Prince' })
             .end((err, res) => {
                 expect(res).to.have.status(400);
                 expect(res.body).to.have.property('message').eql('User already exists');

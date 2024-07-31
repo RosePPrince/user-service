@@ -21,8 +21,8 @@ describe('User API', () => {
     const res = await request(app)
       .post('/api/users')
       .send({
-        name: 'John Doe',
-        email: 'john.doe@example.com',
+        name: 'Rose Prince',
+        email: 'rose@example.com',
         password: 'password123',
       });
     expect(res.statusCode).toEqual(201);
@@ -31,12 +31,12 @@ describe('User API', () => {
 
   it('should get a user by ID', async () => {
     const user = await User.create({
-      name: 'Jane Doe',
-      email: 'jane.doe@example.com',
+      name: 'Prince',
+      email: 'prince@example.com',
       password: 'password123',
     });
     const res = await request(app).get(`/api/users/${user.id}`);
     expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('name', 'Jane Doe');
+    expect(res.body).toHaveProperty('name', 'Prince');
   });
 });
